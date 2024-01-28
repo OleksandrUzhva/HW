@@ -6,15 +6,15 @@ with open(
 ) as file:
     file_content = file.read()
 
-    search_string = input("Введіть строку для пошука: ")
+    search_string = input("Please enter a search word: ")
 
-    lines = file_content.split("\n")
+    lines = file_content.split()
     found_in_lines = [line for line in lines if search_string in line]
 
     if found_in_lines:
         print(
-            f"Строка '{search_string}' найдена в следующих строках ({len(found_in_lines)} шт.):"
+            f"Words'{search_string}' found in  ({len(found_in_lines)} шт.):"
         )
 
     else:
-        print(f"Строка '{search_string}' не найдена в файле.")
+        print(f"words '{search_string}' weren`t found.")
