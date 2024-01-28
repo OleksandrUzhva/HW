@@ -13,8 +13,8 @@ with open(
 
     if found_in_lines:
         print(
-            f"Строка '{search_string}' найдена в следующих строках ({len(found_in_lines)} шт.):"
+            f"Строка '{search_string}' знайдена в наступних ({len(found_in_lines)} шт.):"
         )
 
     else:
-        print(f"Строка '{search_string}' не найдена в файле.")
+        print(f"Строка '{search_string}' не знайдена в файлі.")
