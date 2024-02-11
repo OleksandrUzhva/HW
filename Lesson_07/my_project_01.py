@@ -42,8 +42,8 @@ def player_update(number: int, new_name: str, new_age: int) -> None:
         if update_player["number"] == number:
             update_player["name"] = new_name
             update_player["age"] = new_age
+            print(f"Player {number} updated successfully")
     return None
-    print(f"Player {number} updated successfully")
 
 
 def main():
