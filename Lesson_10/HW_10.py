@@ -52,7 +52,7 @@ def convert_to(value: float, currency_from: str, currency_to: str) -> float:
     result: dict = response.json()
     with open("log.json", "a") as log:
         time_now = datetime.datetime.now()
-        time: str = time_now.strftime("%d/%m/%y %H:%M")
+        time: str = time_now.strftime("%d/%m/%y %H:%M:%S")
         log_data = {
             "currency_from": result["Realtime Currency Exchange Rate"][
                 "1. From_Currency Code"
