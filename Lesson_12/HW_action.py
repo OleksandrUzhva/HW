@@ -19,8 +19,8 @@ def load_key():
     return key
 
 
-def encrypt_file(file_path, key):
-    print(f"Encrypting file from {file_path} in process {os.getpid()}")
+def encrypt_file(path, key):
+    print(f"Encrypting file from {path} in process {os.getpid()}")
     with open("rockyou.txt", "rb") as file:
         original = file.read()
     fernet = Fernet(key)
