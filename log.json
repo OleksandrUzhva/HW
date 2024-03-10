@@ -34,3 +34,21 @@
   "rate": "1.12894000",
   "timestamp": "14/02/24 21:11:52"
 }
+{
+  "currency_from": "USD",
+  "currency_to": "CHF",
+  "rate": "0.87670000",
+  "timestamp": "10/03/24 15:34:21"
+}
+{
+  "currency_from": "GBP",
+  "currency_to": "CHF",
+  "rate": "1.12770000",
+  "timestamp": "10/03/24 15:34:22"
+}
+{
+  "currency_from": "CHF",
+  "currency_to": "USD",
+  "rate": "1.14070000",
+  "timestamp": "10/03/24 15:34:22"
+}
