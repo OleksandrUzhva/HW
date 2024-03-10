@@ -17,7 +17,7 @@ app.add_middleware(
 
 
 @app.post("/currency-exchange")
-async def currency(currency_from="USD", currency_to="UAH"):
+async def currency(currency_from, currency_to):
     url = f"https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency={currency_from}&to_currency={currency_to}&apikey=D5G28HSZ0FWYD5WQ"
 
     async with httpx.AsyncClient() as client:

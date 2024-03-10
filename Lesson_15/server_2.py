@@ -1,4 +1,3 @@
-import json
 from datetime import datetime, timedelta
 
 import httpx
@@ -28,8 +27,8 @@ def is_cache_valid():
     return (current_time - timestamp) < timedelta(seconds=10)
 
 
-@app.post("/currency-exchange")
-async def currency(currency_from="USD", currency_to="UAH"):
+@app.get("/currency-exchange")
+async def currency(currency_from: str, currency_to: str):
     if is_cache_valid():
         return {"rate": cached_exchange_rate["data"], "cached": True}
 
@@ -38,19 +37,6 @@ async def currency(currency_from="USD", currency_to="UAH"):
     async with httpx.AsyncClient() as client:
         response: httpx.Response = await client.get(url)
         rate = response.json()
-        with open("currency.json", "a") as log:
-            log_data = {
-                "currency_from": rate["Realtime Currency Exchange Rate"][
-                    "1. From_Currency Code"
-                ],
-                "currency_to": rate["Realtime Currency Exchange Rate"][
-                    "3. To_Currency Code"
-                ],
-                "rate": rate["Realtime Currency Exchange Rate"]["5. Exchange Rate"],
-            }
-
-        json.dump(log_data, log, indent=2)
-        log.write("\n")
 
     cached_exchange_rate["timestamp"] = datetime.utcnow()
     cached_exchange_rate["data"] = rate
